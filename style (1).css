@@ -1,0 +1,201 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --steel: #e8eaeb;
+  --paper: #f4f5f5;
+  --ink: #1c2228;
+  --muted: #55606a;
+  --rule: #c9cdd0;
+  --link: #2d4f80;
+  --straw: #d9b25f;
+  --bronze: #b8762f;
+  --purple: #7a4f86;
+  --blue: #2d4f80;
+  --head: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --steel: #161b20;
+  --paper: #1d242b;
+  --ink: #eceff1;
+  --muted: #a3adb5;
+  --rule: #34404a;
+  --link: #7fa6dc;
+  --blue: #5f86bd;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+  margin: 0;
+  background: var(--steel);
+  color: var(--ink);
+  font: 17px/1.65 var(--body);
+}
+a { color: var(--link); }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--straw);
+  outline-offset: 3px;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+p { margin: 0 0 14px; max-width: 68ch; }
+h2 { font: 700 1.6rem/1.2 var(--head); margin: 0 0 18px; letter-spacing: -0.01em; }
+h3 { font: 700 1.1rem/1.3 var(--head); margin: 0; }
+.meta { color: var(--muted); font-size: 0.95rem; margin: 2px 0 0; }
+section { padding: 48px 0 8px; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 72px 0 40px; }
+.hero .wrap { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+.photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+  border: 4px solid var(--paper);
+  box-shadow: 0 0 0 3px var(--bronze);
+}
+.hero h1 {
+  font: 700 clamp(2.4rem, 7vw, 3.8rem) / 1.05 var(--head);
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+.role { font: 500 1.2rem/1.4 var(--head); margin: 0 0 4px; min-height: 1.4em; }
+.cursor { display: inline-block; width: 2px; height: 1.1em; background: var(--bronze); vertical-align: text-bottom; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.sub { margin: 0; color: var(--muted); }
+.cta { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font: 500 1rem var(--body);
+  text-decoration: none;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+}
+.btn.primary { background: var(--blue); color: #fff; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn:hover { border-color: var(--bronze); }
+
+/* Temper-colour strip: the colours steel turns when heat-treated */
+.temper {
+  height: 10px;
+  background: linear-gradient(90deg, var(--straw), var(--bronze) 35%, var(--purple) 65%, var(--blue));
+  transform-origin: left;
+  animation: heat 1.4s ease-out both;
+}
+@keyframes heat { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ---------- Navigation ---------- */
+.nav { background: var(--paper); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 5; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; }
+.nav-links { display: flex; gap: 18px; overflow-x: auto; }
+.nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; white-space: nowrap; padding: 4px 0; border-bottom: 3px solid transparent; }
+.nav-links a:hover { color: var(--bronze); }
+.nav-links a.active { border-bottom-color: var(--bronze); }
+#theme-toggle {
+  flex: none;
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--rule);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font: 500 0.9rem var(--body);
+  cursor: pointer;
+}
+#theme-toggle:hover { border-color: var(--bronze); }
+
+/* ---------- Education ---------- */
+.edu { list-style: none; margin: 0; padding: 0 0 0 22px; border-left: 3px solid var(--rule); }
+.edu li { position: relative; padding-bottom: 26px; }
+.edu li:last-child { padding-bottom: 0; }
+.edu li::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 7px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bronze);
+  border: 3px solid var(--steel);
+}
+.score { font-weight: 500; }
+
+/* ---------- Skills ---------- */
+dl { margin: 0; }
+dt { font: 700 1rem var(--head); margin-top: 14px; }
+dd { margin: 2px 0 0; color: var(--muted); }
+
+/* ---------- Projects ---------- */
+.project { padding: 18px 0; border-top: 1px solid var(--rule); }
+.project:last-of-type { border-bottom: 1px solid var(--rule); }
+.tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 1px 10px;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  margin-left: 8px;
+}
+
+/* Tic Tac Toe demo */
+.game { margin-top: 14px; }
+#board { display: grid; grid-template-columns: repeat(3, 76px); gap: 6px; margin-bottom: 12px; }
+.cell {
+  width: 76px;
+  height: 76px;
+  font: 700 2rem var(--head);
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px solid var(--rule);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cell:hover:not(:disabled) { border-color: var(--bronze); }
+.cell.x { color: var(--blue); }
+.cell.o { color: var(--bronze); }
+.cell.win { background: var(--straw); color: #1c2228; border-color: var(--bronze); }
+#status { font-weight: 500; margin: 0 0 10px; min-height: 1.6em; }
+
+/* ---------- Lists ---------- */
+ul.plain { margin: 0; padding-left: 20px; }
+ul.plain li { margin-bottom: 8px; }
+
+/* ---------- Contact ---------- */
+.links a { display: inline-block; margin: 0 18px 10px 0; font-weight: 500; }
+form { margin-top: 18px; max-width: 480px; }
+label { display: block; font-weight: 500; margin: 12px 0 4px; }
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: 1rem var(--body);
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--rule);
+  border-radius: 6px;
+}
+textarea { min-height: 110px; resize: vertical; }
+form button { margin-top: 16px; }
+#form-msg { margin-top: 12px; font-weight: 500; }
+.hidden { display: none; }
+
+footer { padding: 40px 0 56px; color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- Responsive and motion ---------- */
+@media (max-width: 520px) {
+  .hero { padding-top: 48px; }
+  .hero .wrap { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .temper, .cursor { animation: none; }
+}

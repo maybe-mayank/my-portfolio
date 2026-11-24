@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mayank Soni | B.Tech Student at MANIT Bhopal</title>
+<meta name="description" content="Portfolio of Mayank Soni, a first-year Materials and Metallurgical Engineering student at MANIT Bhopal who codes in C, C++, Python and JavaScript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  /* Set the theme before the page paints to avoid a flash */
+  (function () {
+    var theme;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (!theme) theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="photo" src="profile.jpg" alt="Portrait of Mayank Soni" width="160" height="160">
+    <div>
+      <h1>Mayank Soni</h1>
+      <p class="role"><span id="typed">Metallurgy student</span><span class="cursor" aria-hidden="true"></span></p>
+      <p class="sub">B.Tech, Materials and Metallurgical Engineering at MANIT Bhopal, class of 2030.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#projects">See my projects</a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="temper" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button id="theme-toggle" type="button" aria-label="Switch between light and dark theme">Dark</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>About me</h2>
+    <p>I'm a first-year Materials and Metallurgical Engineering student at MANIT Bhopal. I enjoy programming and web development, and I want to bring coding into core engineering work.</p>
+    <p>Outside class, I mentor JEE aspirants, make content, and dance. I'm looking for internships and projects where I can learn by building.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ol class="edu">
+      <li>
+        <h3>B.Tech, Materials and Metallurgical Engineering</h3>
+        <p class="meta">Maulana Azad National Institute of Technology (MANIT), Bhopal | 2026 to 2030</p>
+      </li>
+      <li>
+        <h3>Class 12, MP Board</h3>
+        <p class="meta">Vivekananda Vidyapeeth | 2025 | <span class="score">88.6%</span></p>
+      </li>
+      <li>
+        <h3>Class 10, MP Board</h3>
+        <p class="meta">Vivekananda Vidyapeeth | 2023 | <span class="score">91.6%</span></p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl>
+      <dt>Programming</dt>
+      <dd>C, C++, Python</dd>
+      <dt>Web development</dt>
+      <dd>HTML, CSS, JavaScript</dd>
+      <dt>Tools</dt>
+      <dd>Git, GitHub</dd>
+      <dt>Languages</dt>
+      <dd>English, Hindi</dd>
+    </dl>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Tic Tac Toe <span class="tag">JavaScript</span></h3>
+      <p>A two-player game that runs in the browser. It tracks turns and detects wins and draws. Try it here.</p>
+      <div class="game">
+        <p id="status" role="status" aria-live="polite">Player X's turn</p>
+        <div id="board" role="group" aria-label="Tic Tac Toe board"></div>
+        <button id="reset" class="btn ghost" type="button">New game</button>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Voting Machine <span class="tag">C</span></h3>
+      <p>A console program that records votes for candidates and shows the final results.</p>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements and activities</h2>
+    <ul class="plain">
+      <li><strong>3rd prize, Bid2Code (2026).</strong> Coding competition by IEEE MANIT at Samwad.</li>
+      <li><strong>Mentor to JEE aspirants.</strong> I guide students on preparation strategy and problem solving.</li>
+    </ul>
+  </section>
+
+  <section id="interests">
+    <h2>Interests</h2>
+    <p>Coding, dancing, and content creation.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Bhopal, Madhya Pradesh, India</p>
+    <div class="links">
+      <a href="mailto:mayanksoni1407@gmail.com">mayanksoni1407@gmail.com</a>
+      <a href="tel:+917649099779">+91 7649099779</a>
+      <a href="https://www.linkedin.com/in/mayanksoni1407" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" required autocomplete="name">
+      <label for="email">Your email</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <button class="btn primary" type="submit">Send message</button>
+      <p id="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Mayank Soni</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
