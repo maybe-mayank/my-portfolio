@@ -2,7 +2,7 @@
 
 A responsive personal portfolio website built with plain HTML, CSS and JavaScript.
 
-**Live site:** _add your Netlify link here_
+**Live site:** https://adorable-khapse-13dc7c.netlify.app/
 
 ## About
 
@@ -15,7 +15,6 @@ I'm a first-year B.Tech student in Materials and Metallurgical Engineering at MA
 - Typing effect in the hero section
 - Navigation that highlights the section you are reading
 - Playable Tic Tac Toe game built with JavaScript
-- Contact form powered by Netlify Forms
 - Accessible: keyboard focus styles, labelled controls, and reduced-motion support
 
 ## Design idea
@@ -31,18 +30,7 @@ script.js     theme toggle, typing effect, nav highlight, game, form
 profile.jpg   profile photo
 ```
 
-## Run locally
 
-Download or clone the repo and open `index.html` in a browser. No build step is needed.
-
-## Deploy
-
-1. Push the files to a public GitHub repository.
-2. On Netlify, choose "Add new site", then "Import an existing project" and select the repo, or drag the folder onto app.netlify.com/drop.
-
-## Built with
-
-HTML5, CSS3 (custom properties, grid, flexbox), vanilla JavaScript, Google Fonts
 
 ## Contact
 
